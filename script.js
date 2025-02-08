@@ -59,108 +59,66 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function calculateTotalValue(length) {
-  var minutes = Math.floor(length / 60),
-    seconds_int = length - minutes * 60,
-    seconds_str = seconds_int.toString(),
-    seconds = seconds_str.substr(0, 2),
-    time = minutes + ":" + seconds;
-
-  return time;
+  const minutes = Math.floor(length / 60);
+  const seconds = Math.floor(length % 60).toString().padStart(2, "0");
+  return `${minutes}:${seconds}`;
 }
 
 function calculateCurrentValue(currentTime) {
-  var current_hour = parseInt(currentTime / 3600) % 24,
-    current_minute = parseInt(currentTime / 60) % 60,
-    current_seconds_long = currentTime % 60,
-    current_seconds = current_seconds_long.toFixed(),
-    current_time =
-      (current_minute < 10 ? "0" + current_minute : current_minute) +
-      ":" +
-      (current_seconds < 10 ? "0" + current_seconds : current_seconds);
-
-  return current_time;
+  const minutes = Math.floor(currentTime / 60).toString().padStart(2, "0");
+  const seconds = Math.floor(currentTime % 60).toString().padStart(2, "0");
+  return `${minutes}:${seconds}`;
 }
 
 function initProgressBar() {
-  var player = document.getElementById("player");
-  var length = player.duration;
-  var current_time = player.currentTime;
+  const player = document.getElementById("player");
+  const progressbar = document.getElementById("seekObj");
+  const currentTime = calculateCurrentValue(player.currentTime);
+  const totalLength = calculateTotalValue(player.duration);
 
-  // calculate total length of value
-  var totalLength = calculateTotalValue(length);
-  document.querySelector(".end-time").innerHTML = totalLength;
-
-  // calculate current value time
-  var currentTime = calculateCurrentValue(current_time);
-  document.querySelector(".start-time").innerHTML = currentTime;
-
-  var progressbar = document.getElementById("seekObj");
+  document.querySelector(".start-time").textContent = currentTime;
+  document.querySelector(".end-time").textContent = totalLength;
   progressbar.value = player.currentTime / player.duration;
 
   progressbar.addEventListener("click", function (evt) {
-    var percent = evt.offsetX / this.offsetWidth;
+    const percent = evt.offsetX / this.offsetWidth;
     player.currentTime = percent * player.duration;
     progressbar.value = percent / 100;
   });
 
-  if (player.currentTime == player.duration) {
+  if (player.currentTime === player.duration) {
     document.getElementById("play-btn").classList.remove("pause");
   }
 }
 
-function initPlayers(num) {
-  // pass num in if there are multiple audio players e.g 'player' + i
+function initPlayers() {
+  const player = document.getElementById("player");
+  const playBtn = document.getElementById("play-btn");
+  const muteBtn = document.getElementById("mute-btn");
 
-  for (var i = 0; i < num; i++) {
-    (function () {
-      // Variables
-      // ----------------------------------------------------------
-      // audio embed object
-      var playerContainer = document.getElementById("player-container"),
-        player = document.getElementById("player"),
-        isPlaying = false,
-        playBtn = document.getElementById("play-btn"),
-        muteBtn = document.getElementById("mute-btn");
+  player.volume = 0.5;
 
-      // Set initial volume to 50%
-      player.volume = 0.5;
+  playBtn?.addEventListener("click", togglePlay);
+  muteBtn?.addEventListener("click", toggleMute);
 
-      // Controls Listeners
-      // ----------------------------------------------------------
-      if (playBtn != null) {
-        playBtn.addEventListener("click", function () {
-          togglePlay();
-        });
-      }
-
-      if (muteBtn != null) {
-        muteBtn.addEventListener("click", function () {
-          toggleMute();
-        });
-      }
-
-      // Controls & Sounds Methods
-      // ----------------------------------------------------------
-      function togglePlay() {
-        if (player.paused === false) {
-          player.pause();
-          isPlaying = false;
-          document.getElementById("play-btn").classList.remove("pause");
-        } else {
-          player.play();
-          document.getElementById("play-btn").classList.add("pause");
-          isPlaying = true;
-        }
-      }
-
-      function toggleMute() {
-        player.muted = !player.muted;
-        muteBtn.textContent = player.muted ? "Unmute" : "Mute";
-      }
-
-      player.addEventListener("timeupdate", initProgressBar);
-    })();
+  function togglePlay() {
+    if (player.paused) {
+      player.play();
+      playBtn.classList.add("pause");
+      playBtn.textContent = "Pause";
+    } else {
+      player.pause();
+      playBtn.classList.remove("pause");
+      playBtn.textContent = "Play";
+    }
   }
+
+  function toggleMute() {
+    player.muted = !player.muted;
+    muteBtn.textContent = player.muted ? "Unmute" : "Mute";
+  }
+
+  player.addEventListener("timeupdate", initProgressBar);
 }
 
-initPlayers(document.querySelectorAll("#player-container").length);
+initPlayers();
