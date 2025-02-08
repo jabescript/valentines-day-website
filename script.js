@@ -42,18 +42,4 @@ document.addEventListener('DOMContentLoaded', function() {
     resizeCanvas();
     setInterval(createHeart, 100);
     animate();
-
-    document.getElementById('valentine-button').addEventListener('click', function() {
-        document.getElementById('valentine-dialog').showModal();
-    });
-
-    document.getElementById('yes-button').addEventListener('click', function() {
-        alert('Yay! Happy Valentine\'s Day!');
-        document.getElementById('valentine-dialog').close();
-    });
-
-    document.getElementById('no-button').addEventListener('click', function() {
-        alert('Oh no! Maybe next time.');
-        document.getElementById('valentine-dialog').close();
-    });
 });
