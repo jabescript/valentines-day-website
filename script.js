@@ -47,15 +47,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function animate() {
+  function animateConfetti() {
     drawHearts();
-    requestAnimationFrame(animate);
+    requestAnimationFrame(animateConfetti);
   }
 
   window.addEventListener("resize", resizeCanvas);
   resizeCanvas();
   setInterval(createHeart, 100);
-  animate();
+  animateConfetti();
 });
 
 function calculateTotalValue(length) {

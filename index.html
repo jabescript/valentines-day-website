@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Valentine's Day</title>
+    
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,12 +17,11 @@
   </head>
   <body>
     <div class="container text-center">
+      <!-- Audio Player -->
       <div class="audio-player">
         <div
           class="album-image"
-          style="
-            background-image: url('https://i.scdn.co/image/ab67616d0000b2730b04da4f224b51ff86e0a481');
-          "
+          style="background-image: url('https://i.scdn.co/image/ab67616d0000b2730b04da4f224b51ff86e0a481');"
         ></div>
         <div class="audio-wrapper" id="player-container">
           <audio
@@ -29,7 +31,7 @@
             volume="0.5"
           >
             <source
-              src="https://jabezbstorage.blob.core.windows.net/jabezbcontainer/WhenEmmaFallsInLove.mp3"
+              src="https://johncanjastorage.blob.core.windows.net/johncanjacontainer/WhenEmmaFallsInLove.mp3"
               type="audio/mp3"
             />
           </audio>
@@ -40,52 +42,51 @@
             <progress id="seekObj" value="0" max="1"></progress>
           </span>
           <br />
-          <small class="start-time"></small>
-          -
-          <small class="end-time"></small>
+          <small class="start-time"></small> - <small class="end-time"></small>
           <br />
           <div class="button-group">
             <button id="play-btn" class="btn btn-primary btn-sm">Play</button>
-            <button id="mute-btn" class="btn btn-outline-secondary btn-sm">
-              Mute
-            </button>
+            <button id="mute-btn" class="btn btn-outline-secondary btn-sm">Mute</button>
           </div>
         </div>
       </div>
+
+      <!-- Main Content -->
       <h1 class="display-5">Happy Valentine's Day, Nhaz!</h1>
       <p class="fs-5">I love you more than anything in the world!</p>
 
+      <!-- Image Gallery -->
       <div class="gallery mt-5 mb-5">
         <img
-          src="https://jabezbstorage.blob.core.windows.net/jabezbcontainer/IMG-1.JPG"
+          src="https://johncanjastorage.blob.core.windows.net/johncanjacontainer/IMG-1.JPG"
         />
         <img
-          src="https://jabezbstorage.blob.core.windows.net/jabezbcontainer/IMG-2.JPG"
+          src="https://johncanjastorage.blob.core.windows.net/johncanjacontainer/IMG-2.JPG"
         />
         <img
-          src="https://jabezbstorage.blob.core.windows.net/jabezbcontainer/IMG-3.jpg"
+          src="https://johncanjastorage.blob.core.windows.net/johncanjacontainer/IMG-3.jpg"
         />
         <img
-          src="https://jabezbstorage.blob.core.windows.net/jabezbcontainer/IMG-4.JPG"
+          src="https://johncanjastorage.blob.core.windows.net/johncanjacontainer/IMG-4.JPG"
         />
         <img
-          src="https://jabezbstorage.blob.core.windows.net/jabezbcontainer/IMG-5.JPG"
+          src="https://johncanjastorage.blob.core.windows.net/johncanjacontainer/IMG-5.JPG"
+        />
+        <!-- <img
+          src="https://johncanjastorage.blob.core.windows.net/johncanjacontainer/IMG-6.jpg"
         />
         <img
-          src="https://jabezbstorage.blob.core.windows.net/jabezbcontainer/IMG-6.jpg"
+          src="https://johncanjastorage.blob.core.windows.net/johncanjacontainer/IMG-7.JPG"
         />
         <img
-          src="https://jabezbstorage.blob.core.windows.net/jabezbcontainer/IMG-7.JPG"
+          src="https://johncanjastorage.blob.core.windows.net/johncanjacontainer/IMG-8.JPG"
         />
         <img
-          src="https://jabezbstorage.blob.core.windows.net/jabezbcontainer/IMG-8.JPG"
+          src="https://johncanjastorage.blob.core.windows.net/johncanjacontainer/IMG-9.JPG"
         />
         <img
-          src="https://jabezbstorage.blob.core.windows.net/jabezbcontainer/IMG-9.JPG"
-        />
-        <img
-          src="https://jabezbstorage.blob.core.windows.net/jabezbcontainer/IMG-10.JPG"
-        />
+          src="https://johncanjastorage.blob.core.windows.net/johncanjacontainer/IMG-10.JPG"
+        /> -->
       </div>
 
       <!-- Button trigger modal -->
@@ -98,7 +99,7 @@
         Click Me! ♥
       </button>
 
-      <!-- Modal -->
+      <!-- Valentine Modal -->
       <div
         class="modal fade"
         id="valentineModal"
@@ -132,6 +133,7 @@
         </div>
       </div>
 
+      <!-- Location Modal -->
       <div
         class="modal fade"
         id="locationModal"
@@ -173,8 +175,10 @@
       </div>
     </div>
 
+    <!-- Confetti Canvas -->
     <canvas id="confetti-canvas"></canvas>
 
+    <!-- Scripts -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
