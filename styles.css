@@ -1,6 +1,12 @@
 body {
-  background-color: #ffe6e6;
+  background-color: #ffccd5; /* Ensure this is the desired color */
   font-family: "Arial", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+  touch-action: none; /* Prevent scrolling */
 }
 
 #confetti-canvas {
@@ -13,10 +19,10 @@ body {
 }
 
 .gallery {
-  --d: 10s;
+  --d: 20s;
   display: grid;
   place-items: center; /* Center both horizontally and vertically */
-  width: 300px;
+  width: 18.75rem; /* 300px */
   margin: 0 auto;
 }
 
@@ -25,8 +31,8 @@ body {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  border: 10px solid #f2f2f2;
-  box-shadow: 0 0 4px #0007;
+  border: 0.625rem solid #f2f2f2; /* 10px */
+  box-shadow: 0 0 0.25rem #0007; /* 4px */
   z-index: 2;
   animation: slide var(--d) infinite, z-order var(--d) infinite steps(1);
 }
@@ -62,11 +68,12 @@ body {
 
 .audio-player {
   background: white;
-  border: 1px solid #acacac;
-  width: 300px;
-  margin: 20px auto;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 0.0625rem solid #acacac; /* 1px */
+  width: 100%;
+  max-width: 30rem; /* 320px */
+  margin: 1.25rem auto; /* 20px */
+  padding: 0.625rem; /* 10px */
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); /* 10px */
   display: flex;
   align-items: center;
 }
@@ -76,10 +83,10 @@ body {
 }
 
 .album-image {
-  width: 100px;
-  height: 100px;
+  width: 6.25rem; /* 100px */
+  height: 6.25rem; /* 100px */
   background-size: cover;
-  margin-right: 10px;
+  margin-right: 0.625rem; /* 10px */
 }
 
 .player-controls {
@@ -87,20 +94,20 @@ body {
 }
 
 .player-controls p {
-  font-size: 14px;
+  font-size: 0.875rem; /* 14px */
   margin: 0;
 }
 
 .player-controls progress {
   width: 100%;
-  height: 5px;
+  height: 0.3125rem; /* 5px */
   -webkit-appearance: none;
   appearance: none;
 }
 
 .player-controls progress[value]::-webkit-progress-bar {
   background-color: #f2f2f2;
-  border-radius: 2px;
+  border-radius: 0.125rem; /* 2px */
 }
 
 .player-controls progress[value]::-webkit-progress-value {
@@ -109,12 +116,19 @@ body {
 
 .player-controls small {
   display: inline-block;
-  width: 45px;
+  width: 2.8125rem; /* 45px */
   text-align: center;
 }
 
+#play-btn,
 #mute-btn {
-  margin-top: 10px;
+  margin-top: 0.625rem; /* 10px */
+  margin-right: 0.3125rem; /* 5px */
+}
+
+.player-controls .button-group {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the left */
 }
 
 @keyframes slide {
@@ -148,39 +162,22 @@ body {
   }
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: grid;
-  place-content: center;
-  background: #f8f6f1;
-  overflow: hidden;
-}
-
 #hedlinecontainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 60px;
+  margin-top: 1.25rem; /* 20px */
+  margin-bottom: 3.75rem; /* 60px */
 }
 
 #shine {
-  font-size: 60px;
+  font-size: 3.75rem; /* 60px */
   font-weight: bold;
   color: rgba(255, 0, 102, 0.3);
   z-index: 10;
-  background: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#222),
-      to(#222),
-      color-stop(0.5, #fff)
-    )
-    0 0 no-repeat;
-  background-size: 150px;
-  -webkit-background-size: 150px;
+  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+  background-size: 9.375rem; /* 150px */
+  -webkit-background-size: 9.375rem; /* 150px */
   -webkit-background-clip: text;
   background-clip: text;
   animation-name: shine;
@@ -225,14 +222,19 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  #shine {
-    font-size: 22px;
+  body {
+    font-size: 0.875rem; /* 14px */
   }
+
+  #shine {
+    font-size: 1.375rem; /* 22px */
+  }
+
   #hedlinecontainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 3.75rem; /* 60px */
   }
 
   .gallery {
@@ -240,47 +242,51 @@ body {
     display: grid;
     place-items: center;
     width: 100%;
-    max-width: 300px;
+    max-width: 18.75rem; /* 300px */
     margin: 0 auto;
   }
 }
 
 @media only screen and (max-width: 768px) {
   body {
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px */
   }
 
   .gallery {
-    max-width: 300px;
+    max-width: 18.75rem; /* 300px */
     margin: 0 auto;
   }
 
   #hedlinecontainer {
-    margin-top: 10px;
-    margin-bottom: 30px;
+    margin-top: 0.625rem; /* 10px */
+    margin-bottom: 1.875rem; /* 30px */
   }
 
   #shine {
-    font-size: 40px;
+    font-size: 2.5rem; /* 40px */
   }
 }
 
 @media only screen and (max-width: 480px) {
   body {
-    font-size: 12px;
+    font-size: 0.75rem; /* 12px */
   }
 
   .gallery {
-    max-width: 300px;
+    max-width: 18.75rem; /* 300px */
     margin: 0 auto;
   }
 
   #hedlinecontainer {
-    margin-top: 5px;
-    margin-bottom: 20px;
+    margin-top: 0.3125rem; /* 5px */
+    margin-bottom: 1.25rem; /* 20px */
   }
 
   #shine {
-    font-size: 30px;
+    font-size: 1.875rem; /* 30px */
   }
+}
+
+.modal-content {
+  background-color: #f8dde2;
 }
