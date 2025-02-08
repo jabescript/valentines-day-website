@@ -40,6 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
-    setInterval(createHeart, 200);
+    setInterval(createHeart, 100);
     animate();
 });
