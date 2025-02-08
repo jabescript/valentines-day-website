@@ -238,6 +238,14 @@ body {
     padding: 0.3125rem;
     top: 70%;
   }
+
+  .display-5 {
+    font-size: 1.5rem;
+  }
+
+  .fs-5 {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 768px) {
