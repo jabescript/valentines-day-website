@@ -18,7 +18,7 @@ body {
   display: grid;
   place-items: center; /* Center both horizontally and vertically */
   width: 300px;
-  margin-left: 250px;
+  margin: 0 auto;
 }
 
 .gallery > img {
@@ -180,6 +180,7 @@ body {
 
   .gallery {
     max-width: 300px;
+    margin: 0 auto;
   }
 
   #hedlinecontainer {
@@ -199,6 +200,7 @@ body {
 
   .gallery {
     max-width: 300px;
+    margin: 0 auto;
   }
 
   #hedlinecontainer {
