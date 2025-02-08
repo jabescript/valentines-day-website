@@ -1,12 +1,11 @@
 body {
-  background-color: #ffccd5; /* Ensure this is the desired color */
+  background-color: #ffccd5;
   font-family: "Arial", sans-serif;
   margin: 0;
   min-height: 100vh;
   display: grid;
   place-content: center;
   overflow: hidden;
-  touch-action: none; /* Prevent scrolling */
 }
 
 #confetti-canvas {
@@ -21,8 +20,8 @@ body {
 .gallery {
   --d: 30s;
   display: grid;
-  place-items: center; /* Center both horizontally and vertically */
-  width: 18.75rem; /* 300px */
+  place-items: center;
+  width: 18.75rem;
   margin: 0 auto;
 }
 
@@ -31,8 +30,8 @@ body {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  border: 0.625rem solid #f2f2f2; /* 10px */
-  box-shadow: 0 0 0.25rem #0007; /* 4px */
+  border: 0.625rem solid #f2f2f2;
+  box-shadow: 0 0 0.25rem #0007;
   z-index: 2;
   animation: slide var(--d) infinite, z-order var(--d) infinite steps(1);
 }
@@ -68,12 +67,12 @@ body {
 
 .audio-player {
   background: white;
-  border: 0.0625rem solid #acacac; /* 1px */
+  border: 0.0625rem solid #acacac;
   width: 100%;
-  max-width: 30rem; /* 320px */
-  margin: 1.25rem auto; /* 20px */
-  padding: 0.625rem; /* 10px */
-  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); /* 10px */
+  max-width: 30rem;
+  margin: 1.25rem auto;
+  padding: 0.625rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
 }
@@ -83,10 +82,10 @@ body {
 }
 
 .album-image {
-  width: 6.25rem; /* 100px */
-  height: 6.25rem; /* 100px */
+  width: 6.25rem;
+  height: 6.25rem;
   background-size: cover;
-  margin-right: 0.625rem; /* 10px */
+  margin-right: 0.625rem;
 }
 
 .player-controls {
@@ -94,20 +93,20 @@ body {
 }
 
 .player-controls p {
-  font-size: 0.875rem; /* 14px */
+  font-size: 0.875rem;
   margin: 0;
 }
 
 .player-controls progress {
   width: 100%;
-  height: 0.3125rem; /* 5px */
+  height: 0.3125rem;
   -webkit-appearance: none;
   appearance: none;
 }
 
 .player-controls progress[value]::-webkit-progress-bar {
   background-color: #f2f2f2;
-  border-radius: 0.125rem; /* 2px */
+  border-radius: 0.125rem;
 }
 
 .player-controls progress[value]::-webkit-progress-value {
@@ -116,19 +115,19 @@ body {
 
 .player-controls small {
   display: inline-block;
-  width: 2.8125rem; /* 45px */
+  width: 2.8125rem;
   text-align: center;
 }
 
 #play-btn,
 #mute-btn {
-  margin-top: 0.625rem; /* 10px */
-  margin-right: 0.3125rem; /* 5px */
+  margin-top: 0.625rem;
+  margin-right: 0.3125rem;
 }
 
 .player-controls .button-group {
   display: flex;
-  justify-content: flex-end; /* Align buttons to the left */
+  justify-content: flex-end;
 }
 
 @keyframes slide {
@@ -166,26 +165,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1.25rem; /* 20px */
-  margin-bottom: 3.75rem; /* 60px */
+  margin-top: 1.25rem;
+  margin-bottom: 3.75rem;
 }
 
 #shine {
-  font-size: 3.75rem; /* 60px */
+  font-size: 3.75rem;
   font-weight: bold;
   color: rgba(255, 0, 102, 0.3);
   z-index: 10;
   background: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#222),
-      to(#222),
-      color-stop(0.5, #fff)
-    )
-    0 0 no-repeat;
-  background-size: 9.375rem; /* 150px */
-  -webkit-background-size: 9.375rem; /* 150px */
+    linear,
+    left top,
+    right top,
+    from(#222),
+    to(#222),
+    color-stop(0.5, #fff)
+  )
+  0 0 no-repeat;
+  background-size: 9.375rem;
+  -webkit-background-size: 9.375rem;
   -webkit-background-clip: text;
   background-clip: text;
   animation-name: shine;
@@ -231,18 +230,18 @@ body {
 
 @media only screen and (max-width: 600px) {
   body {
-    font-size: 0.875rem; /* 14px */
+    font-size: 0.875rem;
   }
 
   #shine {
-    font-size: 1.375rem; /* 22px */
+    font-size: 1.375rem;
   }
 
   #hedlinecontainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3.75rem; /* 60px */
+    margin-bottom: 3.75rem;
   }
 
   .gallery {
@@ -250,48 +249,48 @@ body {
     display: grid;
     place-items: center;
     width: 100%;
-    max-width: 15rem; /* 240px */
+    max-width: 15rem;
     margin: 0 auto;
   }
 }
 
 @media only screen and (max-width: 768px) {
   body {
-    font-size: 0.875rem; /* 14px */
+    font-size: 0.875rem;
   }
 
   .gallery {
-    max-width: 18.75rem; /* 300px */
+    max-width: 18.75rem;
     margin: 0 auto;
   }
 
   #hedlinecontainer {
-    margin-top: 0.625rem; /* 10px */
-    margin-bottom: 1.875rem; /* 30px */
+    margin-top: 0.625rem;
+    margin-bottom: 1.875rem;
   }
 
   #shine {
-    font-size: 2.5rem; /* 40px */
+    font-size: 2.5rem;
   }
 }
 
 @media only screen and (max-width: 480px) {
   body {
-    font-size: 0.75rem; /* 12px */
+    font-size: 0.75rem;
   }
 
   .gallery {
-    max-width: 15rem; /* 240px */
+    max-width: 15rem;
     margin: 0 auto;
   }
 
   #hedlinecontainer {
-    margin-top: 0.3125rem; /* 5px */
-    margin-bottom: 1.25rem; /* 20px */
+    margin-top: 0.3125rem;
+    margin-bottom: 1.25rem;
   }
 
   #shine {
-    font-size: 1.875rem; /* 30px */
+    font-size: 1.875rem;
   }
 }
 
