@@ -19,7 +19,7 @@ body {
 }
 
 .gallery {
-  --d: 20s;
+  --d: 30s;
   display: grid;
   place-items: center; /* Center both horizontally and vertically */
   width: 18.75rem; /* 300px */
@@ -175,7 +175,15 @@ body {
   font-weight: bold;
   color: rgba(255, 0, 102, 0.3);
   z-index: 10;
-  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(#222),
+      to(#222),
+      color-stop(0.5, #fff)
+    )
+    0 0 no-repeat;
   background-size: 9.375rem; /* 150px */
   -webkit-background-size: 9.375rem; /* 150px */
   -webkit-background-clip: text;
@@ -242,7 +250,7 @@ body {
     display: grid;
     place-items: center;
     width: 100%;
-    max-width: 18.75rem; /* 300px */
+    max-width: 15rem; /* 240px */
     margin: 0 auto;
   }
 }
@@ -273,7 +281,7 @@ body {
   }
 
   .gallery {
-    max-width: 18.75rem; /* 300px */
+    max-width: 15rem; /* 240px */
     margin: 0 auto;
   }
 
