@@ -245,7 +245,7 @@ body {
   }
 
   .gallery {
-    --d: 10s;
+    --d: 30s;
     display: grid;
     place-items: center;
     width: 100%;
