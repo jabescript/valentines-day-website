@@ -14,8 +14,26 @@
   </head>
   <body>
     <div class="container text-center">
-      <h1 class="display-1">Happy Valentine's Day, Nhaz!</h1>
-      <p class="lead">I love you more than anything in the world!</p>
+      <div class="audio-player">
+        <div class="album-image" style="background-image: url('https://i.scdn.co/image/ab67616d0000b2730b04da4f224b51ff86e0a481');"></div>
+        <div class="audio-wrapper" id="player-container">
+          <audio id="player" autoplay ontimeupdate="initProgressBar()" volume="0.5">
+            <source src="assets/WhenEmmaFallsInLove.mp3" type="audio/mp3" />
+          </audio>
+        </div>
+        <div class="player-controls">
+          <p class="fw-bold">Taylor Swift - When Emma Falls In Love</p>
+          <span id="seekObjContainer">
+            <progress id="seekObj" value="0" max="1"></progress>
+          </span>
+          <br />
+          <small class="start-time"></small>
+          <small class="end-time"></small>
+          <button id="mute-btn" class="btn btn-secondary btn-sm">Mute</button>
+        </div>
+      </div>
+      <h1 class="display-5">Happy Valentine's Day, Nhaz!</h1>
+      <p class="fs-5">I love you more than anything in the world!</p>
 
       <div class="gallery mt-5 mb-5">
         <img src="assets/1.JPG" />
@@ -23,6 +41,11 @@
         <img src="assets/3.JPG" />
         <img src="assets/4.JPG" />
         <img src="assets/5.jpg" />
+        <img src="assets/6.jpg" />
+        <img src="assets/7.jpg" />
+        <img src="assets/8.jpg" />
+        <img src="assets/9.jpg" />
+        <img src="assets/10.jpg" />
       </div>
 
       <!-- Button trigger modal -->
@@ -35,41 +58,73 @@
         Click Me! ♥
       </button>
     </div>
-          <!-- Modal -->
-          <div
-          class="modal fade"
-          id="valentineModal"
-          tabindex="-1"
-          aria-labelledby="valentineModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="valentineModalLabel">Will you be my Valentine?</h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <p>Will you be my Valentine?</p>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button type="button" class="btn btn-primary">Yes</button>
-              </div>
-            </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="valentineModal"
+      tabindex="-1"
+      aria-labelledby="valentineModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <p class="fs-3">Will you be my Valentine?</p>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              No
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-target="#locationModal"
+              data-bs-toggle="modal"
+            >
+              Yes
+            </button>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="locationModal"
+      aria-hidden="true"
+      aria-labelledby="locationModalLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h2 class="text-center">Let's meet at Ilona's Place! See you on the 14th!</h2>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.2380452774705!2d121.15462049999998!3d14.585507199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b9ed7616aa37%3A0x92c96b226aabb145!2sIlona&#39;s%20Place!5e0!3m2!1sen!2sph!4v1739001920994!5m2!1sen!2sph"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >Okay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <canvas id="confetti-canvas"></canvas>
 
     <script
